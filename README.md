@@ -26,7 +26,7 @@ $ pip install .
 # How to use the code
 
 ```
-$ git clone https://github.com/Scorrpiius/Chemical-structure-detection
+$ git clone https://github.com/Scorrpiius/Chemical-structure-detection.git
 $ cd Chemical-structure-detection
 $ python3 chemical_detection.py folder_path (this folder should contain all the images you want to analyse)
 ```
