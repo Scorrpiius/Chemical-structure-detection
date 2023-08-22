@@ -28,14 +28,14 @@ Les images à analyser sont dans le dossier "C:\User\Document\Images". Il faut a
 $ python3 chemical_detection.py "C:\User\Document\Images"
 ```
 # Erreur courante
-Si jamais il y a des erreurs de type "No module named ..." c'est qu'il faut surement installer la librairie en question. Cela se fait avec la commande pip:
+Si jamais il y a des erreurs de type "No module named ..." c'est qu'il faut sûrement installer la librairie en question. Cela se fait avec la commande pip:
 ```
  $ pip install module_name (module_name étant le nom de la librairie manquante)
  ```
 # Composition
-- Le dossier Sample contient des exemples de schémas de dégradation pour tester le code.
+- Le dossier Samples contient des exemples de schémas de dégradation pour tester le code.
 - Le fichier image_processing.py contient des fonctions qui modifient les images pour optimiser la reconnaissance des structures chimiques par DECIMER-Image-Segmentation.
-- Le fichier document_processing.py s'occupe d'éxecuter les fonctions d'image_processing.py sur les images et ensuite fait appel à DECIMER-Image-Segmentation pour isoler les structures chimiques de chaque image, puis à DECIMER pour extraire la formule SMILES associée à chaque image de molécule.
+- Le fichier document_processing.py s'occupe d'éxecuter les fonctions d'image_processing.py sur les images et ensuite, fait appel à DECIMER-Image-Segmentation pour isoler les structures chimiques de chaque image, puis à DECIMER pour extraire la formule SMILES de chaque image de molécule.
 - Le fichier requirements.txt contient toutes les libraires à installer.
   
 # Pre requisite
@@ -53,7 +53,7 @@ $ pip install .
 
 ## Note
 - There is a slight change to do in the DECIMER-Image-Segmentation code for it to work properly.
-- On your computer got to "DECIMER-Image-Segmentation\decimer_segmentation\decimer_segmentation.py" and on line 365 change the Image.ANITALIAS with Image.Resampling.LANCZOS
+- On your computer go to "DECIMER-Image-Segmentation\decimer_segmentation\decimer_segmentation.py" and on line 365 change the Image.ANITALIAS with Image.Resampling.LANCZOS
 
 # How to use the code
 
@@ -73,7 +73,7 @@ Sometimes, not all the modules needed are installed, and you get a "No module na
  $ pip install module_name (module_name being the missing module)
  ```
 # Repository layout
-- The Sample folder contains exemples of degradation patterns to test the code
+- The Samples folder contains exemples of degradation patterns to test the code.
 - The file image_processing.py contains functions that modifies the images to optimize the chemical structure recognition by the DECIMER-Image-Segmentation tool.
 - The file document_processing.py executes the previous functions on every image, call the DECIMER-Image-Segmentation tool to isolates the chemical structures then call DECIMER to get the SMILES formula of each segmented image.
 - The file requirements.txt contains all the necessary libraries for the code to execute well.
