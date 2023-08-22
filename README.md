@@ -73,7 +73,7 @@ Sometimes, not all the modules needed are installed, and you get a "No module na
  $ pip install module_name (module_name being the missing module)
  ```
 # Repository layout
-- The Sample folder contains exemples of degradation pattterns to test the code
+- The Sample folder contains exemples of degradation patterns to test the code
 - The file image_processing.py contains functions that modifies the images to optimize the chemical structure recognition by the DECIMER-Image-Segmentation tool.
 - The file document_processing.py executes the previous functions on every image, call the DECIMER-Image-Segmentation tool to isolates the chemical structures then call DECIMER to get the SMILES formula of each segmented image.
 - The file requirements.txt contains all the necessary libraries for the code to execute well.
