@@ -4,14 +4,8 @@ Il faut les dernières versions de python et pip
 
 # Installer les librairies nécessaires
 ```
-$ pip install easyocr
-$ pip install opencv-python
-$ pip install numpy
-$ pip install aspose-words
-$ pip install torchvision
-$ pip install Pillow
+$ pip install -r requirements.txt
 
-$ pip install DECIMER
 $ git clone https://github.com/Kohulan/DECIMER-Image-Segmentation
 $ cd DECIMER-Image-Segmentation
 $ pip install .
@@ -38,18 +32,18 @@ Si jamais il y a des erreurs de type "No module named ..." c'est qu'il faut sure
 ```
  $ pip install module_name (module_name étant le nom de la librairie manquante)
  ```
+# Composition
+- Le dossier Sample contient des exemples de schémas de dégradation pour tester le code.
+- Le fichier image_processing.py contient des fonctions qui modifient les images pour optimiser la reconnaissance des structures chimiques par DECIMER-Image-Segmentation.
+- Le fichier document_processing.py s'occupe d'éxecuter les fonctions d'image_processing.py sur les images et ensuite fait appel à DECIMER-Image-Segmentation pour isoler les structures chimiques de chaque image, puis à DECIMER pour extraire la formule SMILES associée à chaque image de molécule.
+- Le fichier requirements.txt contient toutes les libraires à installer.
+  
 # Pre requisite
 You need the latest versions of python and pip
 # How to install the libraries needed
 ```
-$ pip install easyocr
-$ pip install opencv-python
-$ pip install numpy
-$ pip install aspose-words
-$ pip install torchvision
-$ pip install Pillow
+$ pip install -r requirements.txt
 
-$ pip install DECIMER
 $ git clone https://github.com/Kohulan/DECIMER-Image-Segmentation
 $ cd DECIMER-Image-Segmentation
 $ pip install .
@@ -78,6 +72,12 @@ Sometimes, not all the modules needed are installed, and you get a "No module na
 ```
  $ pip install module_name (module_name being the missing module)
  ```
+# Repository layout
+- The Sample folder contains exemples of degradation pattterns to test the code
+- The file image_processing.py contains functions that modifies the images to optimize the chemical structure recognition by the DECIMER-Image-Segmentation tool.
+- The file document_processing.py executes the previous functions on every image, call the DECIMER-Image-Segmentation tool to isolates the chemical structures then call DECIMER to get the SMILES formula of each segmented image.
+- The file requirements.txt contains all the necessary libraries for the code to execute well.
+
 # Citations
 - For DECIMER-Segmentation: Rajan, K., Brinkhaus, H.O., Sorokina, M. et al. DECIMER-Segmentation: Automated extraction of chemical structure depictions from scientific literature. J Cheminform 13, 20 (2021). https://doi.org/10.1186/s13321-021-00496-1
 - For DECIMER : Rajan K, Brinkhaus HO, Agea MI, Zielesny A, Steinbeck C (2023) DECIMER.ai - An open platform for automated optical chemical structure identification, segmentation and recognition in scientific publications. ChemRxiv. doi: https://10.26434/chemrxiv-2023-xhcx9
