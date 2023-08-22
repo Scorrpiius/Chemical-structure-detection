@@ -1,8 +1,7 @@
 import easyocr 
 import numpy as np 
 import cv2
-import math
-import os
+
 
 chemical_dict = ["C", "N", "H", "O", "S", "-", "_", "=", "c", "n", "o", "s", "h", "]", "~", ";", ":", "z", "2", "0", "1", "3", "6", " ", "?", "}", "Na", "A", "Z"]
 
