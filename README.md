@@ -34,7 +34,7 @@ $ python3 chemical_detection.py "C:\User\Document\Images" True
 ```
 - Par défaut quand il n'y a qu'un seul paramètre, l'histogramme s'affiche
 - Pour ne pas visualiser l'histogramme il faut mettre False en option
-- 
+  
 # Erreur courante
 Si jamais il y a des erreurs de type "No module named ..." c'est qu'il faut sûrement installer la librairie en question. Cela se fait avec la commande pip:
 ```
@@ -83,7 +83,7 @@ $ python3 chemical_detection.py "C:\User\Document\Images" True
 ```
 - By default, with only one parameter, the visualisation is set to True
 - To not see the histogram, you have to write False
-- 
+  
 # Common error
 Sometimes, not all the modules needed are installed, and you get a "No module named ..." error. You can fix this by running this command: 
 ```
