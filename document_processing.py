@@ -23,21 +23,26 @@ def document_processing(directorypath: str, visualisation: bool = True):
     os.mkdir(pdf_files_path)
     os.mkdir(segments_path)
 
+    print("Removing the texts from the images........")
     for file in os.listdir(directorypath):
         filepath = directorypath + "\\" + file
         if filepath not in folders_list:
             remove_text(directorypath + "\\" + file, text_removed_path + "\\" +  file)
 
+    print("Resizing the images........")
     for file in os.listdir(text_removed_path):
         filepath = text_removed_path + "\\" + file
         if filepath not in folders_list:
             resize_image(text_removed_path + "\\" + file, resized_images_path + "\\" +  file)
 
+
+    print("Removing the lines from the images........")
     for file in os.listdir(resized_images_path):
         filepath = resized_images_path + "\\" + file
         if filepath not in folders_list:
             remove_lines(resized_images_path + "\\" + file, lines_removes_path + "\\" +  file)
 
+    print("Saving the images as PDF files........")
     for file in os.listdir(lines_removes_path):
         filepath = lines_removes_path + "\\" + file
         if filepath not in folders_list:
@@ -46,11 +51,10 @@ def document_processing(directorypath: str, visualisation: bool = True):
             builder.insert_image(filepath)
             doc.save(pdf_files_path + "\\" + file[:-4] + ".pdf")
 
+    print("Segmenting PDF files........")
     segmented_pdf_list = []
     for file in os.listdir(pdf_files_path):
-        print(file)
         filepath = pdf_files_path + "\\" + file
-        print(filepath)
         raw_segments = ds.segment_chemical_structures_from_file(filepath, expand=True, poppler_path="C:\\Program Files (x86)\\poppler-23.07.0\\Library\\bin")
         segmented_pdf = segments_path + "\\" + file[:-4]
         normalized_segments = [ds.get_square_image(segment, 350) for segment in raw_segments]
@@ -62,7 +66,7 @@ def document_processing(directorypath: str, visualisation: bool = True):
         print(f"Segments saved at {segmented_pdf}.")
 
     
-    
+    print("Analysing segments........")
     smiles_formulas = []
     for path in os.listdir(segments_path):
         txt_filepath = segments_path + "\\" + path + ".txt"
