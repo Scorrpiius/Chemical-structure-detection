@@ -23,18 +23,46 @@ $ python3 chemical_detection.py chemin_dossier (c'est le chemin d'accès du doss
 ```
 
 ## Exemple 
-Les images à analyser sont dans le dossier "C:\User\Document\Images". Il faut alors executer la commande suivante:
+Les images à analyser sont dans le dossier "C:\Sample". Il faut alors executer la commande suivante:
 ```
-$ python3 chemical_detection.py "C:\User\Document\Images"
+$ python3 chemical_detection.py "C:\Sample"
+```
+
+## Résultats:
+Le code crée des nouveaux dossiers pour stocker temporairement les résultats de chaque processus.
+#### Dossier de travail avant l'éxécution du code:
+```bash
+  ├── Sample/                           
+    +   ├ ─ Sample_1.jpg
+```
+
+#### Dossier de travail après l'éxécution du code:
+```bash
+  ├── Sample/                           
+    +   ├ ─ Sample_1.jpg                     # Image originale
+    +   ├── Lines removed/                  
+          +  ├ ─ Sample_1.jpg                # Image avec les lignes retirées
+    +   ├── PDF files/
+          +  ├ ─ Sample_1.pdf                # Fichier pdf contenant l'image à analyser
+    +   ├── Resized images/
+              +  ├ ─ Sample_1.jpg            # Image avec une nouvelle taille
+    +   ├── Segmented PDFs/
+            +   ├── Sample_1/
+                  +  ├ ─ Sample_1_nom_0.png  # Image de la première structure chimique isolée
+                  +  ├ ─ ....
+                  ...
+            +   ├ ─ Sample_1.txt             # Texte avec toutes les formules SMILES
+    +   ├── Text removed/
+          +  ├ ─ Sample_1.jpg                # Image avec les textes retirés
 ```
 ## Options
 On peut choisir de visualiser les résultats sous la forme d'un histogramme , il faut simplement rajouter une option dans la commande initiale:
 ```
-$ python3 chemical_detection.py "C:\User\Document\Images" True
+$ python3 chemical_detection.py "C:\Sample" True
 ```
 - Par défaut quand il n'y a qu'un seul paramètre, l'histogramme s'affiche
 - Pour ne pas visualiser l'histogramme il faut mettre False en option
-  
+
 # Erreur courante
 Si jamais il y a des erreurs de type "No module named ..." c'est qu'il faut sûrement installer la librairie en question. Cela se fait avec la commande pip:
 ```
@@ -73,13 +101,41 @@ $ python3 chemical_detection.py folder_path (this folder should contain all the 
 ## Example 
 The images you want analysed are in "C:\User\Document\Images". To execute the code you have to run :
 ```
-$ python3 chemical_detection.py "C:\User\Document\Images"
+$ python3 chemical_detection.py "C:\Sample"
+```
+
+## Results:
+The code creates folders to temporarily store the result of each processus.
+#### Working folder before code execution:
+```bash
+  ├── Sample/                           
+    +   ├ ─ Sample_1.jpg
+```
+
+#### Working folder after code execution:
+```bash
+  ├── Sample/                           
+    +   ├ ─ Sample_1.jpg                     # Original image
+    +   ├── Lines removed/                  
+          +  ├ ─ Sample_1.jpg                # Image with lines removed
+    +   ├── PDF files/
+          +  ├ ─ Sample_1.pdf                # PDF file to analyse
+    +   ├── Resized images/
+              +  ├ ─ Sample_1.jpg            # Resized image
+    +   ├── Segmented PDFs/
+            +   ├── Sample_1/
+                  +  ├ ─ Sample_1_nom_0.png  # First chemical structure detected
+                  +  ├ ─ ....
+                  ...
+            +   ├ ─ Sample_1.txt             # Text file with all SMILES formula
+    +   ├── Text removed/
+          +  ├ ─ Sample_1.jpg                # Image with text removed
 ```
 
 ## Options
 You can choose to visualize the results in a histogram. To do so, run the following command:
 ```
-$ python3 chemical_detection.py "C:\User\Document\Images" True
+$ python3 chemical_detection.py "C:\Sample" True
 ```
 - By default, with only one parameter, the visualisation is set to True
 - To not see the histogram, you have to write False
@@ -96,6 +152,6 @@ Sometimes, not all the modules needed are installed, and you get a "No module na
 - The file requirements.txt contains all the necessary libraries for the code to execute well.
 
 # Citations
-- For DECIMER-Segmentation: Rajan, K., Brinkhaus, H.O., Sorokina, M. et al. DECIMER-Segmentation: Automated extraction of chemical structure depictions from scientific literature. J Cheminform 13, 20 (2021). https://doi.org/10.1186/s13321-021-00496-1
-- For DECIMER : Rajan K, Brinkhaus HO, Agea MI, Zielesny A, Steinbeck C (2023) DECIMER.ai - An open platform for automated optical chemical structure identification, segmentation and recognition in scientific publications. ChemRxiv. doi: https://10.26434/chemrxiv-2023-xhcx9
+- DECIMER-Segmentation: Rajan, K., Brinkhaus, H.O., Sorokina, M. et al. DECIMER-Segmentation: Automated extraction of chemical structure depictions from scientific literature. J Cheminform 13, 20 (2021). https://doi.org/10.1186/s13321-021-00496-1
+- DECIMER : Rajan K, Brinkhaus HO, Agea MI, Zielesny A, Steinbeck C (2023) DECIMER.ai - An open platform for automated optical chemical structure identification, segmentation and recognition in scientific publications. ChemRxiv. doi: https://10.26434/chemrxiv-2023-xhcx9
 Rajan, K., Zielesny, A. & Steinbeck, C. DECIMER 1.0: deep learning for chemical image recognition using transformers. J Cheminform 13, 61 (2021). https://doi.org/10.1186/s13321-021-00538-8
