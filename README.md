@@ -27,6 +27,14 @@ Les images à analyser sont dans le dossier "C:\User\Document\Images". Il faut a
 ```
 $ python3 chemical_detection.py "C:\User\Document\Images"
 ```
+## Options
+On peut choisir de visualiser les résultats sous la forme d'un histogramme , il faut simplement rajouter une option dans la commande initiale:
+```
+$ python3 chemical_detection.py "C:\User\Document\Images" True
+```
+- Par défaut quand il n'y a qu'un seul paramètre, l'histogramme s'affiche
+- Pour ne pas visualiser l'histogramme il faut mettre False en option
+- 
 # Erreur courante
 Si jamais il y a des erreurs de type "No module named ..." c'est qu'il faut sûrement installer la librairie en question. Cela se fait avec la commande pip:
 ```
@@ -67,6 +75,15 @@ The images you want analysed are in "C:\User\Document\Images". To execute the co
 ```
 $ python3 chemical_detection.py "C:\User\Document\Images"
 ```
+
+## Options
+You can choose to visualize the results in a histogram. To do so, run the following command:
+```
+$ python3 chemical_detection.py "C:\User\Document\Images" True
+```
+- By default, with only one parameter, the visualisation is set to True
+- To not see the histogram, you have to write False
+- 
 # Common error
 Sometimes, not all the modules needed are installed, and you get a "No module named ..." error. You can fix this by running this command: 
 ```
