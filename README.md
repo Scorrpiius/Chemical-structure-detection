@@ -23,7 +23,7 @@ $ python3 chemical_detection.py chemin_dossier (c'est le chemin d'accès du doss
 ```
 
 ## Exemple 
-Les images à analyser sont dans le dossier "C:\Sample". Il faut alors executer la commande suivante:
+Si les images à analyser sont dans le dossier "C:\Sample", il faut alors executer la commande suivante:
 ```
 $ python3 chemical_detection.py "C:\Sample"
 ```
@@ -99,7 +99,7 @@ $ cd Chemical-structure-detection
 $ python3 chemical_detection.py folder_path (this folder should contain all the images you want to analyse)
 ```
 ## Example 
-The images you want analysed are in "C:\User\Document\Images". To execute the code you have to run :
+If the images you want analysed are in "C:\Sample", you have to run :
 ```
 $ python3 chemical_detection.py "C:\Sample"
 ```
